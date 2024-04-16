@@ -66,3 +66,12 @@ const prevButton = document.querySelector('.carousel-control-prev');
 nextButton.addEventListener('click', nextSlide);
 prevButton.addEventListener('click', prevSlide);
 
+    nextButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    nextSlide();
+  });
+  prevButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    prevSlide();
+  });
+});
