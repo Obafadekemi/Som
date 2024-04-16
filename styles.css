@@ -21,18 +21,14 @@ canvas {
   overflow: hidden;
   white-space: nowrap;
 }
-.message{font-family: Satisfy, sans-serif;
-    margin: 20px;
-    padding: 0;
-    background: #f5f6f7;
-    color: #333;}
 .item {
-  width: 100%;
+  max-width: 800px;
+    min-width: 300px;
   float: left;
   transition: transform 0.6s ease-in-out;
 }
 
-.carousel-inner .active {
+.carousel-inner .active {width:300px;
   transform: translateX(0);
 }
 
