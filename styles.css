@@ -25,8 +25,15 @@ canvas {
   white-space: nowrap;
 }
 
-.item {
-  width: 50%;
+.item {display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 10px;
   float: left;
   transition: transform 0.6s ease-in-out;
 }
