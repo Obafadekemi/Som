@@ -19,10 +19,9 @@ canvas {
 
 .carousel-inner {
   display: flex;
-  width: 100%;
-  height: auto;
-  justify-content: center;
-}
+  width: calc(500px * 5); 
+  transition: transform 0.6s ease-in-out;
+  transform: translateX(0);
 
 .item {
   flex: 0 0 auto; 
