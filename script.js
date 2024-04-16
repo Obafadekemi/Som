@@ -75,3 +75,24 @@ prevButton.addEventListener('click', prevSlide);
     prevSlide();
   });
 });
+const carouselInner = document.querySelector('.carousel-inner');
+const totalItems = document.querySelectorAll('.item').length;
+let currentSlide = 0;
+
+function showSlide(index) {
+  const offset = index * -500; // Assuming each item is 500px wide
+  carouselInner.style.transform = `translateX(${offset}px)`;
+  currentSlide = index;
+}
+
+document.querySelector('.carousel-control-next').addEventListener('click', () => {
+  if (currentSlide < totalItems - 1) {
+    showSlide(currentSlide + 1);
+  }
+});
+
+document.querySelector('.carousel-control-prev').addEventListener('click', () => {
+  if (currentSlide > 0) {
+    showSlide(currentSlide - 1);
+  }
+});
