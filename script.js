@@ -43,25 +43,32 @@ const canvas = document.getElementById('confetti');
     }
     
     drawConfetti();
-const carousel = document.getElementById('image-carousel');
-const items = carousel.querySelectorAll('.item');
+document.addEventListener('DOMContentLoaded', (event) => {
+  const carousel = document.getElementById('image-carousel');
+  const items = carousel.querySelectorAll('.item');
+  let currentSlide = 0;
 
-let currentSlide = 0;
+  function nextSlide() {
+    items[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % items.length;
+    items[currentSlide].classList.add('active');
+  }
 
-function nextSlide() {
-  items[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + 1) % items.length;
-  items[currentSlide].classList.add('active');
-}
+  function prevSlide() {
+    items[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide - 1 + items.length) % items.length;
+    items[currentSlide].classList.add('active');
+  }
 
-function prevSlide() {
-  items[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide - 1 + items.length) % items.length;
-  items[currentSlide].classList.add('active');
-}
+  const nextButton = document.querySelector('.carousel-control-next');
+  const prevButton = document.querySelector('.carousel-control-prev');
 
-const nextButton = document.querySelector('.carousel-control-next');
-const prevButton = document.querySelector('.carousel-control-prev');
-
-nextButton.addEventListener('click', nextSlide);
-prevButton.addEventListener('click', prevSlide);
+  nextButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    nextSlide();
+  });
+  prevButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    prevSlide();
+  });
+});
