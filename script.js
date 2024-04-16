@@ -61,14 +61,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   const nextButton = document.querySelector('.carousel-control-next');
-  const prevButton = document.querySelector('.carousel-control-prev');
+const prevButton = document.querySelector('.carousel-control-prev');
 
-  nextButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    nextSlide();
-  });
-  prevButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    prevSlide();
-  });
-});
+nextButton.addEventListener('click', nextSlide);
+prevButton.addEventListener('click', prevSlide);
+
