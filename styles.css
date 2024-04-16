@@ -44,7 +44,7 @@ canvas {
 }
 
 .carousel-inner .item:not(.active) {
-  transform: translateX(-100%); /* Ensures items slide from the left */
+  transform: translateX(-100%); 
 }
 .carousel-control-prev,
 .carousel-control-next {
@@ -58,6 +58,13 @@ canvas {
   color: #fff;
   opacity: 0.5;
   transition: opacity 0.5s ease-in-out;
+}
+#message {
+  z-index: 10; /* Higher than canvas */
+  position: relative; /* Make sure it's positioned in the document flow */
+  background: rgba(255, 255, 255, 0.8); /* Optional: for better visibility */
+  padding: 20px;
+  margin-top: 20px; /* Adjust spacing */
 }
 
 .carousel-control-prev:hover,
