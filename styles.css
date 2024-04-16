@@ -18,18 +18,25 @@ canvas {
 }
 
 .carousel-inner {
-  display: flex; /* Changed from white-space: nowrap; for better control over item alignment */
+  display: flex;
   width: 100%;
-  height: auto; /* Ensure height adjusts to content */
+  height: auto;
+  justify-content: center;
 }
 
 .item {
-  flex: 0 0 100%; /* Flexbox for equal width slides */
+  flex: 0 0 auto; 
   transition: transform 0.6s ease-in-out;
-  width: 100%; /* Adjust width as necessary */
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+}
+.item img {
+  width: 500px; 
+  height: auto; 
+  border-radius: 15px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
 
 .carousel-inner .active {
