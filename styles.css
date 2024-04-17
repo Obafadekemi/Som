@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
     font-family: Satisfy, sans-serif;
     margin: 20px;
@@ -5,6 +8,7 @@ body {
     background: #f5f6f7;
     color: #333;
 }
+
 canvas {
     position: fixed;
     top: 0;
@@ -13,56 +17,7 @@ canvas {
     height: 100%;
     pointer-events: none;
     z-index: -1; }
-carousel {
-  position: relative;
-  width: 500px; 
-  height: 300px; 
-  margin: auto;
-  overflow: hidden; 
-}
 
-.carousel-inner {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-}
-
-.item {
-  flex: 0 0 100%; /* Each item takes full width of the carousel */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.item img {
-  display: block; 
-  width: 100%; 
-  height: auto; 
-  border-radius: 15px; 
-}
-
-.carousel-inner .active {
-  transform: translateX(0);
-}
-
-.carousel-inner .item:not(.active) {
-  transform: translateX(-100%); 
-}
-.carousel-control-prev,
-.carousel-control-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
 #message {
   z-index: 10; 
   position: relative; 
@@ -71,11 +26,27 @@ carousel {
   margin-top: 20px; 
 }
 
-.carousel-control-prev { left: 10px; }
-.carousel-control-next { right: 10px; }
+gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
 
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background-color: #e9ecef; 
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5); 
+.gallery img {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.gallery::after {
+  content: "";
+  width: 350px;
 }
