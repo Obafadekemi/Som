@@ -24,7 +24,7 @@ canvas {
 }
 
 img{display:block}
-#img-div {
+#img-div {width:500px;
     text-align: center;
     margin: 20px 0;
 }
