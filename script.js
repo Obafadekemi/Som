@@ -43,35 +43,25 @@ const canvas = document.getElementById('confetti');
     }
     
     drawConfetti();
+
 document.addEventListener('DOMContentLoaded', (event) => {
-  const carousel = document.getElementById('image-carousel');
-  const items = carousel.querySelectorAll('.item');
+  const items = document.querySelectorAll('.carousel-inner .item');
   let currentSlide = 0;
 
-  function nextSlide() {
-    items[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % items.length;
-    items[currentSlide].classList.add('active');
+  function showSlide(index) {
+    const newLeft = index * -100; // Each item is 100% of the width
+    document.querySelector('.carousel-inner').style.transform = `translateX(${newLeft}%)`;
+    currentSlide = index;
   }
 
-  function prevSlide() {
-    items[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide - 1 + items.length) % items.length;
-    items[currentSlide].classList.add('active');
-  }
-
-  const nextButton = document.querySelector('.carousel-control-next');
-const prevButton = document.querySelector('.carousel-control-prev');
-
-nextButton.addEventListener('click', nextSlide);
-prevButton.addEventListener('click', prevSlide);
-
-    nextButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    nextSlide();
+  document.querySelector('.carousel-control-next').addEventListener('click', () => {
+    const nextSlideIndex = (currentSlide + 1) % items.length;
+    showSlide(nextSlideIndex);
   });
-  prevButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    prevSlide();
+
+  document.querySelector('.carousel-control-prev').addEventListener('click', () => {
+    const prevSlideIndex = (currentSlide - 1 + items.length) % items.length;
+    showSlide(prevSlideIndex);
   });
 });
+
