@@ -30,7 +30,7 @@ img{display:block}
 }
 
 #image {
-    max-width: 100%;
+    width:500px;
     height: auto;
-    border-radius: 8px;
+    border-radius: 20px;
  justify-content: center;}
