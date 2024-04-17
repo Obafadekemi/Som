@@ -13,29 +13,31 @@ canvas {
     height: 100%;
     pointer-events: none;
     z-index: -1; }
-.carousel {
+carousel {
   position: relative;
+  width: 500px; 
+  height: 300px; 
+  margin: auto;
+  overflow: hidden; 
 }
 
 .carousel-inner {
   display: flex;
-  width: calc(500px * 5); 
   transition: transform 0.6s ease-in-out;
-  transform: translateX(0);
+}
 
 .item {
-  flex: 0 0 auto; 
-  transition: transform 0.6s ease-in-out;
+  flex: 0 0 100%; /* Each item takes full width of the carousel */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
 }
+
 .item img {
-  width: 500px; 
+  display: block; 
+  width: 100%; 
   height: auto; 
   border-radius: 15px; 
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
 
 .carousel-inner .active {
@@ -48,20 +50,18 @@ canvas {
 .carousel-control-prev,
 .carousel-control-next {
   position: absolute;
-  top: 50%; 
-  transform: translateY(-50%); 
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  background-color: #fff; 
-  color: #333;
-  border: none;
-  border-radius: 30px; 
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3); 
-  cursor: pointer; 
-  outline: none; 
+  z-index: 10;
 }
 #message {
   z-index: 10; 
@@ -71,13 +71,8 @@ canvas {
   margin-top: 20px; 
 }
 
-.carousel-control-prev {
-  left: 20px; 
-}
-
-.carousel-control-next {
-  right: 20px; 
-}
+.carousel-control-prev { left: 10px; }
+.carousel-control-next { right: 10px; }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
