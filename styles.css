@@ -1,10 +1,33 @@
-body {max-width: 800px;
+body {
     font-family: Satisfy, sans-serif;
-    margin: 20px;
+    margin: 0;
     padding: 0;
     background: #f5f6f7;
     color: #333;
 }
+
+#main {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+}
+
+#title {
+    text-align: center;
+}
+img{display:block}
+#img-div {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+ justify-content: center;}
 
 canvas {
     position: fixed;
@@ -14,23 +37,3 @@ canvas {
     height: 100%;
     pointer-events: none;
     z-index: -1; }
-
-#message {
-  z-index: 10; 
-  position: relative; 
-  background: rgba(255, 255, 255, 0.8); 
-  padding: 20px;
-  margin-top: 20px; 
-}
-
-img{display:block}
-#img-div {width:500px;
-    text-align: center;
-    margin: 20px 0;
-}
-
-#image {
-    width:500px;
-    height: auto;
-    border-radius: 20px;
- justify-content: center;}
