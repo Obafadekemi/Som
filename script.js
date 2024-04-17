@@ -43,25 +43,3 @@ const canvas = document.getElementById('confetti');
     }
     
     drawConfetti();
-
-document.addEventListener('DOMContentLoaded', (event) => {
-  const items = document.querySelectorAll('.carousel-inner .item');
-  let currentSlide = 0;
-
-  function showSlide(index) {
-    const newLeft = index * -100; // Each item is 100% of the width
-    document.querySelector('.carousel-inner').style.transform = `translateX(${newLeft}%)`;
-    currentSlide = index;
-  }
-
-  document.querySelector('.carousel-control-next').addEventListener('click', () => {
-    const nextSlideIndex = (currentSlide + 1) % items.length;
-    showSlide(nextSlideIndex);
-  });
-
-  document.querySelector('.carousel-control-prev').addEventListener('click', () => {
-    const prevSlideIndex = (currentSlide - 1 + items.length) % items.length;
-    showSlide(prevSlideIndex);
-  });
-});
-
